@@ -1,0 +1,36 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 10px;
+    max-width: 1200px;
+    margin: 1rem auto;
+    cursor: pointer;
+}
+
+.paginator{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+   
+}
+.paginator > h3{
+    background-color: rgb(115, 119, 122);
+    width: 2rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f2f2f2;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .3s;
+}
+.paginator >h3:hover{
+    background-color: rgb(145, 149, 152);
+}
+
+.paginator > span{
+    font-weight: 480;
+    color: var(--text);
+}

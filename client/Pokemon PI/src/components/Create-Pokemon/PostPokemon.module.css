@@ -1,0 +1,113 @@
+.title{
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.continer{
+    background-image: url("../LandingPage/pokemon.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    max-width: 100vw;
+    height: 93.3vh;
+}
+
+
+.containerForm{
+    background: linear-gradient(135deg, #4807ca, #f99018, #3e7aab);
+    opacity: .8;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    margin-left: 35%;
+    margin-top: 5%;
+    gap: 15px;
+    width: 500px;
+    height:600px;
+    transition: .4s;
+   
+}
+.containerForm:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 10px #eba00b;
+}
+
+
+.inputs{
+    height: 15px;
+    background-color: var(--card);
+    color: var(--text);
+    border: 1px solid #1f53c5;
+    border-radius: 5px;
+    padding: 6px;
+    margin-bottom: 0;
+    text-transform: capitalize;
+    /* flex: .3; */
+    font-size: 15px;
+    box-shadow: 4px 4px 16px #00000020;
+    transition: .5s;
+}
+
+.inputs:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+    border: 2px solid #6717df;
+   /*  box-shadow: 0 0 20px 20px #6a1ee520; */
+}
+
+
+.msjValidate{
+    
+    font-size: 15px;
+    color: rgb(49, 3, 3);
+    font-weight: 600;
+   
+}
+
+.Btn{
+    height: 30px;
+    display: flex;
+    border-radius: 5px;
+    justify-content: center;
+    background-color: rgb(125, 83, 210);
+    color: #fff;
+    font-size: large;
+    width: 40%;
+}
+
+.Btn:hover{
+    cursor: pointer;
+    transform: scale(1.04);
+    background: linear-gradient(160deg, #f403d1, #880a94, #64b5f6);
+}
+
+
+.typesSelec{
+    border-radius: 5px;
+    width: 40%;
+    height: 1.8rem;
+    font-size: 15px;
+    box-shadow: 4px 4px 16px #00000020;
+    border: 1px solid #1f53c5;
+    font-family:sans-serif
+}
+.typesSelec:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+    border: 2px solid #6717df;
+}
+
+.options{
+    text-transform: capitalize;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.link:hover{
+    cursor: pointer;
+    transform: scale(1.04);
+    color: #c309a7;
+}

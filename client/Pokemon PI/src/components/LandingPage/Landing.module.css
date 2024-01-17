@@ -1,0 +1,45 @@
+.container{
+    background-image: url("https://images2.alphacoders.com/116/thumb-1920-1160159.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.myButton{
+    display: inline-block;
+    background: linear-gradient(160deg, #f403d1, #880a94, #64b5f6);
+    text-align: center;
+    align-items: center;
+    color: #bbccef;
+    border: 0;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    margin-top: 30rem;
+    margin-left: 58rem;
+    width: 10rem;
+    height: 3rem;
+    box-shadow: 0 0 10px 10px rgb(214, 222, 98);  
+    transition: .5s;
+    
+}
+.myButton:hover{
+    cursor: pointer;
+    box-shadow: 0 0 15px 15px rgb(180, 113, 201);  
+    transform: scale(1.05);
+    background: linear-gradient(160deg, #f403d1, #880a94, #64b5f6);
+    color: #fff;
+   
+}
+
+.image{
+    display: flex;
+    width: 40rem;
+    height: 15rem;
+    margin-left: 40rem;
+}
+
+.link{
+    text-decoration: none;
+}

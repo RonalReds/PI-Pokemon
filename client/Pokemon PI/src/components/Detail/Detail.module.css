@@ -1,0 +1,120 @@
+.containerDetail{
+    background-color: rgba(0, 0, 0, 0.5);
+    /* position: fixed; */
+    display: inline-flex;
+    flex-direction: column;
+    /* top: 0;
+    left: 0; */
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    transition: all 0.6s;
+    /* z-index: 1; */
+    text-transform: capitalize;
+}
+
+.containerSection{
+    margin-top: 10%;
+    background-color: var(--back);
+    width: 40%;
+    min-width: 400px;
+    border-radius: 10px;
+   /*  position: absolute; */
+    padding: 1rem;
+    display: flex;
+    
+}
+
+.imageContainer{
+    display: grid;
+    place-items: center;
+}
+
+.imageDetail{
+    width: 300px;
+    aspect-ratio: 8/10;
+}
+
+
+.tag{
+    background-color: #26e;
+    color: #f2f2f2;
+    padding: 4px 6px;
+    margin-right: 5px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    align-items: center;
+}
+
+.data{
+    display: grid;
+    padding: 0 .5rem;
+    gap: 10px;
+    flex: 1;
+}
+.title{
+    padding-top: 1rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    text-align: center;
+    background-color: rgb(62, 109, 201);
+    color: #fff;
+    border-radius: 10px;
+}
+
+.titlSection{
+    border-radius: 5px;
+    height: 25px;
+    width: 8rem;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 2rem;
+    background-color: #4e4747;
+    color: #fff;
+}
+.skills > section{
+    background-color: var(--card);
+    border: 10px;
+    padding: 5px;
+    box-shadow: 4px 4px 4px #21212120;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-transform: capitalize;
+}
+.skills{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+
+.point{
+    border:  2px solid #000;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+}
+
+.linked{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    background: linear-gradient(160deg, #820670, #792680, #06467a);
+    width: 6rem;
+    height: 2rem;
+    border-radius: 5px;
+}
+
+.linked:hover{
+    cursor: pointer;
+    transform: scale(1.04);
+    opacity: .8;
+    box-shadow: 0 0 5px 5px #880a94;
+}

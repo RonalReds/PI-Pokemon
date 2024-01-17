@@ -1,0 +1,42 @@
+nav {
+background-color: #f5db13;
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: .5rem 0;
+height: 3rem;
+width: auto;
+box-shadow: 4px 4px 8px #00000020;
+}
+
+.imgLogo {
+    height: 8rem;
+    width: auto;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.labelContent{
+    background-color: #ccc;
+    width: 3.5rem;
+    height: 1.1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+}
+.slider {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 1rem;
+    background-color: #fff;
+    transition: .5s;
+}
+.check:checked + .slider{
+    transform: translateX(2.3rem);
+}

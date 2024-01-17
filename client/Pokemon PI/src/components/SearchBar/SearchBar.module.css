@@ -1,0 +1,64 @@
+.conteiner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 0;
+}
+.inputTex{
+    background-color: var(--card);
+    color: var(--text);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 12px;
+    flex: .3;
+    font-size: 15px;
+    box-shadow: 4px 4px 16px #00000020;
+}
+.BtnSearch{
+    background-color: #26e;
+    color: #f2f2f2;
+    border-radius: 10px;
+    border: none;
+    padding: 12px;
+    box-shadow: 4px 4px 16px #00000020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+    font-size: 15px;
+    transition: 0.4s;
+}
+.BtnSearch:hover{
+    transform: scale(1.03);
+    opacity: .9;
+}
+
+.BtnSearch:focus{
+    border: none;
+}
+
+.selec{
+    background-color: #26e;
+    color: #f2f2f2;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 4px 4px 16px #00000020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+    font-size: 15px;
+}
+
+.selec:hover{
+    transform: scale(1.03);
+    opacity: .9;
+}
+
+.linked{
+    text-decoration: none;
+    
+}
