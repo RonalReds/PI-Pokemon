@@ -1,5 +1,5 @@
 const axios = require('axios');
-const URL = 'https://pokeapi.co/api/v2/pokemon?limit=108';
+const URL = 'https://pokeapi.co/api/v2/pokemon?limit=106';
 const { Pokemon, Types } = require('../db.js');
 
 const apiPokemons = async () => {
@@ -18,7 +18,11 @@ const apiPokemons = async () => {
             height: infoPush.data.height,
             weight: infoPush.data.weight,
             image: infoPush.data.sprites.other.dream_world.front_default,
-            types: infoPush.data.types.map((type) => type.type.name),
+            types: infoPush.data.types.map((t)=>{
+                return {
+                    name: t.type.name,
+                }
+            })  
 
             }
         })
@@ -32,48 +36,33 @@ const apiPokemons = async () => {
 
 
 const pokemonsDataBase = async () => {
-    try {
-        const pokemonsDB = await Pokemon.findAll({
-            include: Types,
-        })
 
-        return pokemonsDB.map((pokemon) => {
-            return {
-                id: pokemon.id,
-                name: pokemon.name,
-                image: pokemon.image,
-                life: pokemon.life,
-                attack: pokemon.attack,
-                defense: pokemon.defense,
-                speed: pokemon.speed,
-                height: pokemon.height,
-                weight: pokemon.weight,
-                image: pokemon.data.image,
-                types: pokemon.types.map((type) => type.type.name),
-                createDb: pokemon.createDb
+        const pokemonsDB = await Pokemon.findAll({
+            include: {
+                attributes: ['name'],
+                model : Types,
+                through: {
+                    attributes: [],
+                    },
             }
         })
-
-    } catch (error) {
-        console.log({error : "no pokemons availables on data base"})
-    }
+        return pokemonsDB
 }
 
 
 const pokemonsApi_DB = async () => {
-    try {
+    
       const api_pokemons = await apiPokemons();
       const db_Pokemons = await pokemonsDataBase();
-      const api_Dbpokemons = db_Pokemons ? [...api_pokemons, ...db_Pokemons] : apiPokemons;
-        return api_Dbpokemons;
-    } catch (error) {
-      console.log(error);
-    }
+      
+    return [...db_Pokemons, ...api_pokemons]
+    
+    
 };
 
 const postPokemons = async(params) => {
     
-        const newPoke = await Pokemon.create({
+    const newPoke = await Pokemon.create({
             name: params.name,
             life: params.life,
             attack: params.attack,
@@ -81,10 +70,14 @@ const postPokemons = async(params) => {
             speed: params.speed,
             height: params.height,
             weight: params.weight,
-            image: params.image ? params.image : "https://images3.alphacoders.com/677/677583.png",
-                
-        });
-        newPoke.addType(params.types);
+        image: params.image ? params.image : "https://images3.alphacoders.com/677/677583.png",
+        })
+    /* newPoke.addType(params.types); */
+    
+    params.types.map(async(t)=>{
+        const types = await Types.findOne({where: {name: t}})
+        newPoke.addType(types)
+    })
         
 };
 

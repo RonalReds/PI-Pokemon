@@ -17,6 +17,9 @@ const Home = () => {
     const [QPokemos, setQPokemons] = useState(12);
     const [currentPage, setCurrentPage] = useState(1)
     
+    useEffect( () => {
+        dispatch(showPokemons()); 
+    }, [])
 
     const totalData = currentPage * QPokemos;
     const intialData = totalData - QPokemos;
@@ -32,9 +35,7 @@ const Home = () => {
     }
 
 
-    useEffect( () => {
-        dispatch(showPokemons()); 
-    }, [])
+    
 
 
     return (

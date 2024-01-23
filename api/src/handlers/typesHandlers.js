@@ -1,7 +1,7 @@
-const { typesPokemons, saveTypeBD } = require("../controllers/typesController");
-const { Types } = require('../db.js');
+const { /* typesPokemons, saveTypeBD */ getTypes } = require("../controllers/typesController");
+/* const { Types } = require('../db.js'); */
 
-const getTypes = async(req, res) => {
+/* const getTypes = async(req, res) => {
     try {
         const typeApi = await typesPokemons();
         await saveTypeBD(typeApi)
@@ -14,8 +14,18 @@ const getTypes = async(req, res) => {
         res.status(500).json(error.message)
     }
 }
+ */
+const getTypesHandler = async(req,res)=>{
+    try {
+        const types = await getTypes()
+        res.status(200).json(types)
+    } catch (error) {
+        res.status(400).json({error: error.message})
+    }
+}
 
 
 module.exports = {
-    getTypes
+    /*     getTypes */
+    getTypesHandler
 };

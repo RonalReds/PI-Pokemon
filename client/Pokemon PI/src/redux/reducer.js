@@ -1,7 +1,8 @@
-import { SHOW_POKEMONS, SEARCH_POKEMON, ORDER_ASCENDING, ORDER_DESCENDING, TYPES_POKEMON, ORDER_DESCENDING_ATTACK, ORDER_ASCENDING_ATTACK, POKE_POST } from "./action-types";
+import { SHOW_POKEMONS, SEARCH_POKEMON, ORDER_ASCENDING, ORDER_DESCENDING, TYPES_POKEMON, ORDER_DESCENDING_ATTACK, ORDER_ASCENDING_ATTACK, POKE_POST, POKEMONS_DETAIL } from "./action-types";
 
 const initialState = {
     pokemons: [],
+    pokemonsDetail: [], 
     types: [],
     
 
@@ -67,11 +68,17 @@ const reducer = (state = initialState, action) => {
                     types: action.payload,
             }
             case POKE_POST:
-            // Agregar el nuevo Pokemon al estado
-            return {
-                ...state,
-                pokemons: [...state.pokemons, action.payload],
+                return {
+                    ...state,
+                    pokemons: [...state.pokemons, action.payload],
+                    
             };
+            case POKEMONS_DETAIL:
+                return {
+                    ...state,
+                    pokemonsDetail: action.payload,
+                    
+                };
         
         default:
             return{...state}

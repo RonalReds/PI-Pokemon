@@ -1,5 +1,5 @@
 const { pokemonsApi_DB, postPokemons } = require("../controllers/pokemonsController");
-const { Pokemon, Types } = require('../db.js');
+
 
 
 
@@ -8,7 +8,7 @@ const getPokemons = async (req, res) => {
         const { name } = req.query;
         const listPokemons = await pokemonsApi_DB();
         if (name) {
-            const pokeFiltered = await listPokemons.filter((poke) => poke.name === name.toLowerCase())
+            const pokeFiltered =  await listPokemons.filter((poke) => poke.name === name.toLowerCase())
             if (pokeFiltered.length > 0) {
                 res.status(200).json(pokeFiltered)
             } else {
@@ -44,6 +44,7 @@ const getPokemonById = async (req, res) => {
 };
 
 const pokemonCreate = async (req, res) => {
+    console.log('req handler', req);
     try {
         await postPokemons(req.body);
         console.log(req.body);
@@ -51,18 +52,16 @@ const pokemonCreate = async (req, res) => {
 
 
     } catch (error) {
-        res.status(400).send(error.toString()),
         console.log(error, "Error on Controller");
+        res.status(400).send(error.toString());
     }
 }
-
-
-
-
+ 
 
 
 module.exports = {
     getPokemons,
     getPokemonById,
-    pokemonCreate,
+    pokemonCreate
+   
 };
